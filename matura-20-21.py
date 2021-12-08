@@ -1,3 +1,5 @@
+import math
+
 folder = 'infromatyka_arkusz_pliki/PLIKI DO ZADAN-arkusz II/dane.txt'
 pomoc = 'infromatyka_arkusz_pliki/ODPOWIEDZI-arkusz II/Zadanie 4/pomoc.txt'
 
@@ -52,6 +54,8 @@ def check_operon_szczesliwe():
 
 
 szczesliwe = get_szczesliwe()
+
+
 # szczesliwe_operon = check_operon_szczesliwe()
 print('len szczesliwe', len(szczesliwe))
 
@@ -82,3 +86,28 @@ def wykonaj2(lucky):
 
 
 print(wykonaj2(szczesliwe))
+
+"""
+Niektóre z liczb szczęśliwych są również liczbami pierwszymi. Podaj, ile z podanych liczb to
+jednocześnie liczba szczęśliwa i liczba pierwsza.
+"""
+
+
+def pierwsza(liczba):
+    for x in range(2, int(math.sqrt(liczba) + 2)):
+        if liczba % x == 0:
+            return False
+    return True
+
+
+# list(print(f'Czy liczba {li} jest liczbą pierwszą: {pierwsza(li)}') for li in range(2, 50))
+
+def zad3_czy_szczesliwe_pierwsze():
+    suma = 0
+    for y in dane:
+        if y in szczesliwe and pierwsza(y):
+                suma += 1
+    return suma
+
+
+print(f'Liczba szczesliwych i jednoczesnie pierwszych {zad3_czy_szczesliwe_pierwsze()}')
