@@ -55,7 +55,6 @@ def check_operon_szczesliwe():
 
 szczesliwe = get_szczesliwe()
 
-
 # szczesliwe_operon = check_operon_szczesliwe()
 print('len szczesliwe', len(szczesliwe))
 
@@ -106,7 +105,7 @@ def zad3_czy_szczesliwe_pierwsze():
     suma = 0
     for y in dane:
         if y in szczesliwe and pierwsza(y):
-                suma += 1
+            suma += 1
     return suma
 
 
